@@ -44,7 +44,7 @@ public class TodoController {
                                       @AuthenticationPrincipal LoginUser loginUser) {
         TodoResDto.AddResDto todoDto = todoService.할일추가(addReqDto, loginUser.getUser().getAccountId());
 
-        return new ResponseEntity<>(new ResponseDto<>(1, "Todo 추가 성공", todoDto), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseDto<>(1, "Todo 추가 성공", todoDto), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{todoId}")
