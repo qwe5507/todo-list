@@ -7,10 +7,8 @@ import com.demo.todolist.domain.todo.TodoRepository;
 import com.demo.todolist.domain.user.User;
 import com.demo.todolist.domain.user.UserEnum;
 import com.demo.todolist.domain.user.UserRepository;
-import com.demo.todolist.dto.todo.TodoReqDto;
 import com.demo.todolist.dto.todo.TodoReqDto.AddReqDto;
 import com.demo.todolist.dto.todo.TodoReqDto.ModifyStatusReqDto;
-import com.demo.todolist.dto.todo.TodoResDto;
 import com.demo.todolist.dto.todo.TodoResDto.AddResDto;
 import com.demo.todolist.dto.todo.TodoResDto.DetailResDto;
 import com.demo.todolist.dto.todo.TodoResDto.ModifyStatusResDto;
@@ -25,13 +23,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.*;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class TodoServiceTest extends DummyObject {
@@ -407,7 +404,6 @@ class TodoServiceTest extends DummyObject {
         // stub2
         Todo mockTodo = newMockTodo(10L, mockUser, "testTitle", TodoEnum.IN_PROGRESS, "testContent");
         when(todoRepository.findById(any())).thenReturn(Optional.of(mockTodo));
-
 
         // when
         ModifyStatusResDto modifyStatusResDto = todoService.상태변경(todoId, modifyStatusReqDto, accountId);
