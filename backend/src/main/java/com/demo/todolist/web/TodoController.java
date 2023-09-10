@@ -51,7 +51,7 @@ public class TodoController {
     public ResponseEntity deleteTodo(@PathVariable("todoId") Long todoId, @AuthenticationPrincipal LoginUser loginUser) {
         todoService.할일삭제(todoId, loginUser.getUser().getAccountId());
 
-        return new ResponseEntity<>(new ResponseDto<>(1, "Todo 삭제 성공", null), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseDto<>(1, "Todo 삭제 성공", null), HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/{todoId}")

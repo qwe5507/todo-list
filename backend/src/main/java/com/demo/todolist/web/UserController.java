@@ -37,7 +37,7 @@ public class UserController {
     @DeleteMapping
     public ResponseEntity deleteDelete(@AuthenticationPrincipal LoginUser loginUser) {
         userService.회원탈퇴(loginUser.getUser().getAccountId());
-        return new ResponseEntity<>(new ResponseDto<>(1, "회원탈퇴 성공", ""), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseDto<>(1, "회원탈퇴 성공", ""), HttpStatus.NO_CONTENT);
     }
 
 }
