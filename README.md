@@ -7,7 +7,6 @@
 - H2 Database
 - Spring Data Jpa
 - Spring Security
-- React
 
 # 백엔드 실행 방법
 1. 프로젝트 다운로드
