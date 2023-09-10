@@ -1,7 +1,6 @@
 package com.demo.todolist.dto.user;
 
 import com.demo.todolist.domain.user.User;
-import com.demo.todolist.util.CustomDateUtil;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,14 +15,12 @@ public class UserResDto {
         private String nickname;
         private String phoneNumber;
         private boolean isDelete;
-        private String createdAt;
 
         public LoginResDto(User user) {
             this.accountId = user.getAccountId();
             this.nickname = user.getNickname();
             this.phoneNumber = user.getPhoneNumber();
             this.isDelete = user.isDelete();
-            this.createdAt = CustomDateUtil.toStringFormat(user.getCreatedAt());
         }
     }
 
