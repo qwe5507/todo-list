@@ -31,6 +31,7 @@
 - 편리한 테스트를 위한 더미데이터가 존재합니다.
   - `dev` 실행환경에서만 동작합니다.
   - id는 `user` password는 `1111` 이고, 이 회원이 작성한 하나의 todo 데이터가 존재합니다.
+- 테스트간 독립성을 위해 `teardown.sql`를 실행합니다.
 
 # ERD
 ![image](https://github.com/qwe5507/todo-list/assets/70142711/0805f0d6-5371-4e7c-8831-e2e6c25babcd)
